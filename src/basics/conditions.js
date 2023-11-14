@@ -13,7 +13,10 @@
  * @return {boolean} true if n is bigger than 2
  */
 export function isBiggerThan2(n) {
-  //
+  if (isNaN(n)) {
+    throw new Error("isBiggerThan2 only accept numbers");
+  }
+  return n > 2;
 }
 
 /**
@@ -22,5 +25,10 @@ export function isBiggerThan2(n) {
  * @return {boolean} true if m is a multiple of n
  */
 export function isMult(n, m) {
-  //
+  if (isNaN(n) || isNaN(m)) {
+    throw new Error("isBiggerThan2 only accept numbers");
+  }
+  return n % m == 0;
 }
+
+console.log(isMult(100,10));
