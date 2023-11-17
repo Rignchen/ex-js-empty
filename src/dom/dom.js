@@ -40,5 +40,14 @@ export function addElementsInDOM() {
  * @param {array<{name: string, color: string}>} listElements
  */
 export function addAListInDomFromAnArrayOfObjects(listElements) {
-    //
+    const elements = document.querySelectorAll("#add-list-here")
+    
+    listElements.forEach(element => {
+        const li = document.createElement("li");
+        li.innerText = element.name;
+        li.style.color = element.color;
+        elements.forEach(element => {
+            element.appendChild(li);
+        });
+    });
 }

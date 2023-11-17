@@ -16,7 +16,7 @@ test("Dom exercise, element changed to red", async ({ page }) => {
   const l = page.locator("#change-my-color")
 
   await expect(l).toBeVisible()
-  await expect(l).toHaveCSS("color", "rgb(255, 0, 0)")
+  await expect(l).toHaveCSS("color", "rgb(255,0,0)")
 })
 
 test("Dom exercise, add elements to dom", async ({ page }) => {
