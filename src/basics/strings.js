@@ -1,4 +1,8 @@
-/**
+/**ch the tests by typing `npm run test`**, this will launch all tests, and rerun tests at each file change.
+> You can also launch test from your IDE.
+> You can browse tests, they are located in files ending with `.test.js`.
+
+1. [Basic
  * Find and replace in the provided string, but preserving case
  * If the new word is longer than the replaced one, ignore tail characters
  * @param {string} needle

@@ -45,7 +45,7 @@ export function addAListInDomFromAnArrayOfObjects(listElements) {
     listElements.forEach(element => {
         const li = document.createElement("li");
         li.innerText = element.name;
-        li.style.color = element.color;
+        li.style.backgroundColor = element.color;
         elements.forEach(element => {
             element.appendChild(li);
         });

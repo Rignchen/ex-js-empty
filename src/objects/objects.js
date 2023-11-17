@@ -40,7 +40,7 @@ export function iteratesThroughObjectValuesAndProperties(object) {
 }
 
 /**
- * Return the name of the first younger and first older user in the array
+ * Return the name of the first younger and last older user in the array
  * @param {array<{name: string, age: number}>} users
  * @return {{younger: string, older: string}}
  */
