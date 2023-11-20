@@ -12,21 +12,28 @@
  */
 
 export function findAndReplacePreservingCase(needle, haystack, newWord) {
-  if (typeof needle !== "string" || typeof haystack !== "string" || typeof newWord !== "string") {
-    throw "Unsupported types";
+  if (
+    typeof needle !== "string" ||
+    typeof haystack !== "string" ||
+    typeof newWord !== "string"
+  ) {
+    throw "Unsupported types"
   }
-  let regex = new RegExp(needle, "gi");
+  let regex = new RegExp(needle, "gi")
   return haystack.replaceAll(regex, function (match) {
-    return match.split("").map(function (char, index) {
-      if (index > newWord.length - 1) {
-        return "";
-      } else if (char === char.toUpperCase()) {
-        return newWord[index].toUpperCase();
-      } else {
-        return newWord[index].toLowerCase();
-      }
-    }).reduce((a,b) => a+b);
-  });
+    return match
+      .split("")
+      .map(function (char, index) {
+        if (index > newWord.length - 1) {
+          return ""
+        } else if (char === char.toUpperCase()) {
+          return newWord[index].toUpperCase()
+        } else {
+          return newWord[index].toLowerCase()
+        }
+      })
+      .reduce((a, b) => a + b)
+  })
 }
 
 /*

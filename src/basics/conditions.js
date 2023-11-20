@@ -14,9 +14,9 @@
  */
 export function isBiggerThan2(n) {
   if (isNaN(n)) {
-    throw new Error("isBiggerThan2 only accept numbers");
+    throw new Error("isBiggerThan2 only accept numbers")
   }
-  return n > 2;
+  return n > 2
 }
 
 /**
@@ -26,9 +26,9 @@ export function isBiggerThan2(n) {
  */
 export function isMult(n, m) {
   if (isNaN(n) || isNaN(m)) {
-    throw new Error("isBiggerThan2 only accept numbers");
+    throw new Error("isBiggerThan2 only accept numbers")
   }
-  return n % m == 0;
+  return n % m == 0
 }
 
-console.log(isMult(100,10));
+console.log(isMult(100, 10))

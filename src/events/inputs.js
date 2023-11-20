@@ -4,12 +4,12 @@
  * If input his empty, you should not trigger the alert
  */
 export function displayInputContentInAlertOnEnterKey() {
-    const element = document.querySelector("#write-some-text")
-    element.addEventListener("keypress", (event) => {
-        if ((event.key === "Enter") && (element.value.trim() !== "")) {
-            alert(element.value)
-        }
-    })
+  const element = document.querySelector("#write-some-text")
+  element.addEventListener("keypress", (event) => {
+    if (event.key === "Enter" && element.value.trim() !== "") {
+      alert(element.value)
+    }
+  })
 }
 
 /**
@@ -18,24 +18,24 @@ export function displayInputContentInAlertOnEnterKey() {
  * the text should be added to a list of elements with id "list".
  */
 function addElementList(element, list) {
-    if (element.value.trim() !== "") {
-        const li = document.createElement("li")
-        li.innerText = element.value
-        list.appendChild(li)
-    }
-    element.value = ""
+  if (element.value.trim() !== "") {
+    const li = document.createElement("li")
+    li.innerText = element.value
+    list.appendChild(li)
+  }
+  element.value = ""
 }
 export function addElementsInListOnEnterKey() {
-    const element = document.querySelector("#list-input")
-    const list = document.querySelector("#list")
-    element.addEventListener("blur", () => {
-        addElementList(element,list)
-    })
-    element.addEventListener("keypress", (event) => {
-        if (event.key === "Enter") {
-            addElementList(element,list)
-        }
-    })
+  const element = document.querySelector("#list-input")
+  const list = document.querySelector("#list")
+  element.addEventListener("blur", () => {
+    addElementList(element, list)
+  })
+  element.addEventListener("keypress", (event) => {
+    if (event.key === "Enter") {
+      addElementList(element, list)
+    }
+  })
 }
 
 /**
@@ -43,8 +43,8 @@ export function addElementsInListOnEnterKey() {
  * Use the same list as the previous exercise. "#list"
  */
 export function removeElementsFromListWhenClicked() {
-    const element = document.querySelector("#list")
-    element.addEventListener("click", (event) => {
-        element.removeChild(event.target)
-    })
+  const element = document.querySelector("#list")
+  element.addEventListener("click", (event) => {
+    element.removeChild(event.target)
+  })
 }

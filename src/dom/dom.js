@@ -8,10 +8,10 @@
  * You need to change the color of the html element with the id "change-my-color"
  */
 export function getElementFromDomAndChangeColorToRed() {
-    const elements = document.querySelectorAll("#change-my-color");
-    elements.forEach(element => {
-        element.style.color = "red";
-    });
+  const elements = document.querySelectorAll("#change-my-color")
+  elements.forEach((element) => {
+    element.style.color = "red"
+  })
 }
 
 /**
@@ -19,18 +19,20 @@ export function getElementFromDomAndChangeColorToRed() {
  * The first paragraph must contain "Bonjour", the second "Toto"
  */
 export function addElementsInDOM() {
-    const elements = document.querySelectorAll("#add-your-elements-in-this-element");
+  const elements = document.querySelectorAll(
+    "#add-your-elements-in-this-element",
+  )
 
-    const paragraph = document.createElement("p");
-    paragraph.innerText = "Bonjour";
-    
-    const paragraph2 = document.createElement("p");
-    paragraph2.innerText = "Toto";
+  const paragraph = document.createElement("p")
+  paragraph.innerText = "Bonjour"
 
-    elements.forEach(element => {
-        element.appendChild(paragraph);
-        element.appendChild(paragraph2);
-    });
+  const paragraph2 = document.createElement("p")
+  paragraph2.innerText = "Toto"
+
+  elements.forEach((element) => {
+    element.appendChild(paragraph)
+    element.appendChild(paragraph2)
+  })
 }
 
 /**
@@ -40,14 +42,14 @@ export function addElementsInDOM() {
  * @param {array<{name: string, color: string}>} listElements
  */
 export function addAListInDomFromAnArrayOfObjects(listElements) {
-    const elements = document.querySelectorAll("#add-list-here")
-    
-    listElements.forEach(element => {
-        const li = document.createElement("li");
-        li.innerText = element.name;
-        li.style.backgroundColor = element.color;
-        elements.forEach(element => {
-            element.appendChild(li);
-        });
-    });
+  const elements = document.querySelectorAll("#add-list-here")
+
+  listElements.forEach((element) => {
+    const li = document.createElement("li")
+    li.innerText = element.name
+    li.style.backgroundColor = element.color
+    elements.forEach((element) => {
+      element.appendChild(li)
+    })
+  })
 }

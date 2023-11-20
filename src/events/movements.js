@@ -4,11 +4,11 @@
  * You need to display coordinates as follows : "x: 232, y: 332
  */
 export function mouseMovements() {
-    let element = document.getElementById("mouse-coordinates");
-    document.addEventListener("mousemove", (event) => {
-        element.innerText = `x: ${event.clientX}, y: ${event.clientY}`
-       // element.style.display = "none"
-    })
+  let element = document.getElementById("mouse-coordinates")
+  document.addEventListener("mousemove", (event) => {
+    element.innerText = `x: ${event.clientX}, y: ${event.clientY}`
+    // element.style.display = "none"
+  })
 }
 
 /**
@@ -21,32 +21,37 @@ export function mouseMovements() {
  * Third, when you loose focus of the field, you need to reset the border color to the default one.
  */
 function getRandomColor() {
-    return `#${Math.floor(Math.random() * 255**3).toString(16)}`;
+  return `#${Math.floor(Math.random() * 255 ** 3).toString(16)}`
 }
+
 export function hoverFocusAndBlur() {
-    let element = document.getElementById("focus-me");
-    let labels = document.querySelectorAll("label[for='focus-me']");
-    let currentColor = "#6495ed";
-    let defaultColor = "#6495ed";
-    let messages = [];
-    element.addEventListener("mouseover", (event) => {
-        labels.forEach((label) => {
-            messages.unshift(label.innerText)
-            label.textContent = "Yes, you hover me !"
-    })})
-    element.addEventListener("mouseout", (event) => {
-        labels.forEach((label) => {
-            label.innerText = messages.pop()
-    })})
-    element.addEventListener("focus", (event) => {
-        let newColor = getRandomColor();
-        while (newColor === currentColor) {getRandomColor()}
-        currentColor = newColor;
-        element.style.borderColor = newColor;
+  let element = document.getElementById("focus-me")
+  let labels = document.querySelectorAll("label[for='focus-me']")
+  let currentColor = "#6495ed"
+  let defaultColor = "#6495ed"
+  let messages = []
+  element.addEventListener("mouseover", (event) => {
+    labels.forEach((label) => {
+      messages.unshift(label.innerText)
+      label.textContent = "Yes, you hover me !"
     })
-    element.addEventListener("blur", (event) => {
-        element.style.borderColor = defaultColor;
+  })
+  element.addEventListener("mouseout", (event) => {
+    labels.forEach((label) => {
+      label.innerText = messages.pop()
     })
+  })
+  element.addEventListener("focus", (event) => {
+    let newColor = getRandomColor()
+    while (newColor === currentColor) {
+      getRandomColor()
+    }
+    currentColor = newColor
+    element.style.borderColor = newColor
+  })
+  element.addEventListener("blur", (event) => {
+    element.style.borderColor = defaultColor
+  })
 }
 
 /**
@@ -58,5 +63,5 @@ export function hoverFocusAndBlur() {
  * Take the opportunity to also apply this colour to the text of the 2 input labels.
  */
 export function changesOnInputEvents() {
-    //
+  //
 }

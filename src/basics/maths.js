@@ -2,7 +2,7 @@ function isNumber(...n) {
   /*if one is nor a number, throw an error*/
   for (let i = 0; i < n.length; i++) {
     if (isNaN(n[i]) || typeof n[i] !== "number") {
-      throw "Only accept numbers";
+      throw "Only accept numbers"
     }
   }
 }
@@ -12,11 +12,11 @@ function isNumber(...n) {
  * @return {number} sphere volume
  */
 export function computeSphereVolume(diameter) {
-  isNumber(diameter);
+  isNumber(diameter)
   if (diameter < 0) {
-    throw new Error("Diameter must be positive");
+    throw new Error("Diameter must be positive")
   }
-  return (4 / 3) * Math.PI * (diameter / 2) ** 3;
+  return (4 / 3) * Math.PI * (diameter / 2) ** 3
 }
 
 /**
@@ -24,8 +24,8 @@ export function computeSphereVolume(diameter) {
  * @return {number} number rounded to one decimal
  */
 export function roundNumberToOneDecimals(n) {
-  isNumber(n);
-  return Math.round(n * 10) / 10;
+  isNumber(n)
+  return Math.round(n * 10) / 10
 }
 
 /**
@@ -33,8 +33,8 @@ export function roundNumberToOneDecimals(n) {
  * @return {number} average with full precision
  */
 export function computeAverage(grades) {
-  isNumber(...grades);
-  return grades.reduce((acc, grade) => acc + grade, 0) / grades.length;
+  isNumber(...grades)
+  return grades.reduce((acc, grade) => acc + grade, 0) / grades.length
 }
 
 /**
@@ -42,6 +42,6 @@ export function computeAverage(grades) {
  * @return {number} rounded average to 1 decimal
  */
 export function roundedAverage(grades) {
-  isNumber(...grades);
-  return roundNumberToOneDecimals(computeAverage(grades));
+  isNumber(...grades)
+  return roundNumberToOneDecimals(computeAverage(grades))
 }
