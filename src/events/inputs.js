@@ -17,8 +17,25 @@ export function displayInputContentInAlertOnEnterKey() {
  * The user can write text into it, and when he presses enter or blur the field,
  * the text should be added to a list of elements with id "list".
  */
+function addElementList(element, list) {
+    if (element.value.trim() !== "") {
+        const li = document.createElement("li")
+        li.innerText = element.value
+        list.appendChild(li)
+    }
+    element.value = ""
+}
 export function addElementsInListOnEnterKey() {
-  //
+    const element = document.querySelector("#list-input")
+    const list = document.querySelector("#list")
+    element.addEventListener("blur", () => {
+        addElementList(element,list)
+    })
+    element.addEventListener("keypress", (event) => {
+        if (event.key === "Enter") {
+            addElementList(element,list)
+        }
+    })
 }
 
 /**
@@ -26,5 +43,8 @@ export function addElementsInListOnEnterKey() {
  * Use the same list as the previous exercise. "#list"
  */
 export function removeElementsFromListWhenClicked() {
-  //
+    const element = document.querySelector("#list")
+    element.addEventListener("click", (event) => {
+        element.removeChild(event.target)
+    })
 }
