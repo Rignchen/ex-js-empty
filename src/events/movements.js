@@ -23,12 +23,11 @@ export function mouseMovements() {
 function getRandomColor() {
   return `#${Math.floor(Math.random() * 255 ** 3).toString(16)}`
 }
-
+let defaultColor = "#6495ed"
 export function hoverFocusAndBlur() {
   let element = document.getElementById("focus-me")
   let labels = document.querySelectorAll("label[for='focus-me']")
   let currentColor = "#6495ed"
-  let defaultColor = "#6495ed"
   let messages = []
   element.addEventListener("mouseover", (event) => {
     labels.forEach((label) => {
@@ -63,5 +62,14 @@ export function hoverFocusAndBlur() {
  * Take the opportunity to also apply this colour to the text of the 2 input labels.
  */
 export function changesOnInputEvents() {
-  //
+  let element = document.getElementById("focus-me")
+  let labels = document.querySelectorAll("label[for='focus-me']")
+  element.addEventListener("input", (event) => {
+    if (event.data) {
+      defaultColor = getRandomColor()
+      labels.forEach((label) => {
+        label.style.color = defaultColor
+      })
+    }
+  })
 }
